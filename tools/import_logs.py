@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import io
 import math
 import shutil
+import subprocess
 import zipfile
 from pathlib import Path
 
@@ -212,9 +214,30 @@ def write_manifest(rows: list[dict[str, object]]) -> None:
         writer.writerows(rows)
 
 
+def read_existing_rows(kind: str) -> list[dict[str, object]]:
+    manifest = REPO_ROOT / "MANIFEST.csv"
+    if manifest.is_file():
+        with manifest.open(encoding="utf-8-sig", newline="") as stream:
+            rows = [row for row in csv.DictReader(stream) if row.get("kind") == kind]
+        if rows:
+            return rows
+
+    result = subprocess.run(
+        ["git", "show", "HEAD:MANIFEST.csv"],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        return []
+    text = result.stdout.decode("utf-8-sig")
+    return [row for row in csv.DictReader(io.StringIO(text)) if row.get("kind") == kind]
+
+
 def main() -> None:
     rows = []
     rows.extend(import_source_directories())
+    rows.extend(read_existing_rows("legacy_directory"))
     rows.extend(import_standalone_files())
     rows.extend(import_external_archives())
     write_manifest(rows)
