@@ -13,3 +13,4 @@ current_202610,flight_log_20261005_com9_run2,archive/flight_log_20261005_com9_ru
 current_202610,flight_log_20261005_com9_run2,archive/flight_log_20261005_com9_run2/flight_log.csv,9.804,9.924,0.120,56.770,15.750,38.750,23.000,1,4
 current_202610,flight_log_20261010_board2_com9_152347,archive/flight_log_20261010_board2_com9_152347/flight_log.csv,16.893,17.333,0.440,41.700,25.960,-23.000,48.960,1,13
 current_202610,flight_log_20261011_board2_550ms_com9,archive/flight_log_20261011_board2_550ms_com9/flight_log.csv,12.285,12.805,0.520,36.960,26.480,-1.500,27.980,1,5
+current_202610,flight_log_20261011_board3_com9,archive/flight_log_20261011_board3_com9/flight_log.csv,12.773,13.213,0.440,35.090,27.980,7.750,20.230,1,13
