@@ -1,0 +1,9 @@
+*.csv text
+*.json text
+*.md text
+*.py text
+*.svg text
+*.png binary
+*.zip binary
+*serial_capture*.txt binary
+
