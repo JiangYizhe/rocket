@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>火箭飞控完整流程测试详细结论</title>
+<style>
+@page{size:A4;margin:15mm}*{box-sizing:border-box}body{margin:0;color:#172033;font-family:"Microsoft YaHei","SimHei",sans-serif;font-size:10.5pt;line-height:1.62}h1{font-size:24pt;color:#102a56;margin:0 0 8px}h2{font-size:15pt;color:#173f78;border-bottom:2px solid #3573c9;padding-bottom:4px;margin:17px 0 8px;break-after:avoid}h3{font-size:11.5pt;color:#1d4f91;margin:11px 0 4px;break-after:avoid}p{margin:5px 0}ul,ol{margin:5px 0 8px 22px;padding:0}li{margin:2px 0}table{width:100%;border-collapse:collapse;margin:7px 0 11px;font-size:9.3pt;break-inside:avoid}th,td{border:1px solid #aebed3;padding:5px 7px;vertical-align:top}th{background:#e8f0fb;color:#153d72;text-align:left}.cover{min-height:252mm;padding-top:43mm;text-align:center;page-break-after:always}.sub{font-size:14pt;color:#50647e}.meta{margin:48mm auto 0;width:76%;text-align:left;border-top:2px solid #315f9e;padding-top:12px;color:#465b75}.summary{margin:11px 0;padding:10px 12px;border-left:5px solid #e29222;background:#fff7e8;font-weight:700}.ok{color:#08783e;font-weight:700}.warn{color:#ad5600;font-weight:700}.bad{color:#b42318;font-weight:700}.note{padding:8px 10px;background:#f2f6fb;border:1px solid #cfdaea}.page{page-break-before:always}code{font-family:Consolas,monospace;font-size:9pt}.foot{margin-top:15px;border-top:1px solid #bdc9d8;padding-top:5px;color:#66768b;font-size:8.5pt}
+</style></head><body>
+<section class="cover"><h1>火箭飞控完整流程测试</h1><div class="sub">详细数据分析与结论报告</div><div class="meta"><p><b>日志：</b>flight_log_20260815_193030</p><p><b>格式：</b>RLOG v6，112字节/条</p><p><b>数据：</b>681条，50Hz，0.032～13.632s</p><p><b>日期：</b>2026年8月15日</p></div></section>
+<h2>1. 执行摘要</h2>
+<div class="summary">本次测试证明PB11点火时序、状态机、姿态PID、舵机PWM、姿态超限开伞、BMP280/IMU采集和W25Q64记录均已运行；但80m最高点预测与高度舵面混控没有实际启动，本次不能证明80m控高算法有效。</div>
+<p>开伞在9.492s发生，不是13s定时错误，而是转换后横滚角连续100ms超过65°的安全保护结果。高度控制未启动的直接原因是PID启动时横滚约37.5°，超过15°安全倾角。</p>
+<h2>2. 关键时间线</h2>
+<table><tr><th>时间</th><th>事件</th><th>结论</th></tr>
+<tr><td>0.032s</td><td>WAIT_PID</td><td>日志开始，舵机1500μs</td></tr><tr><td>0.092s</td><td>BMP280有效</td><td>0x77，初始化正常</td></tr><tr><td>0.692s</td><td>高度零点完成</td><td>16次采样与40ms周期一致</td></tr><tr><td>6.712s</td><td>二级点火</td><td>设定6700ms，日志量化到6712ms</td></tr><tr><td>7.512s</td><td>点火结束</td><td>800ms脉宽正常</td></tr><tr><td>7.652s</td><td>FLIGHT / PID启动</td><td>燃烧结束连续确认完成</td></tr><tr><td>9.392s</td><td>姿态超限</td><td>横滚66.15°，超过65°</td></tr><tr><td>9.492s</td><td>DEPLOYED</td><td>超限100ms后开伞，PID停止</td></tr><tr><td>13.000s</td><td>强制开伞时刻</td><td>已提前开伞，不重复触发</td></tr></table>
+<p class="note">6.712s而非6.700s来自20ms日志网格：日志从32ms开始，首个大于6700ms的记录点是6712ms。这不是一秒初始化滞后。</p>
+<h2>3. 点火和开伞</h2>
+<h3>3.1 PB11点火</h3><ul><li>6.712～7.492s日志显示点火有效，7.512s已关闭。</li><li>持续时间与800ms一致，后续没有重复点火。</li><li>点火期间两路舵机保持1500μs中位。</li></ul><p><b>判定：</b><span class="ok">软件点火时序通过</span>。日志证明程序状态，MOS功率回路仍建议用灯泡或功率电阻假负载确认。</p>
+<h3>3.2 开伞</h3><p>9.392s横滚66.15°，9.472s横滚70.88°，9.492s横滚72.62°并开伞，与“姿态误差大于65°持续100ms”完全吻合。</p><p><b>判定：</b><span class="ok">65°保护开伞通过</span>；<span class="warn">13s强制开伞未单独验证</span>。</p>
+<div class="page"></div><h2>4. 倒装姿态、PID和舵机</h2>
+<h3>4.1 倒装180°</h3><p>板子正面朝下时，零点后横滚接近0°，静止段横滚平均约-0.88°；配置快照中安装横滚偏置为180°。这证明倒装坐标转换已生效，否则初始横滚应接近±180°。</p>
+<h3>4.2 PID输出</h3><p>PID在7.652～9.472s运行，共92个日志样本。启动时横滚37.50°、俯仰9.09°，横滚目标角速度立即限幅为-90°/s，俯仰目标由-36.44°/s达到-90°/s。</p>
+<table><tr><th>项目</th><th>范围</th><th>说明</th></tr><tr><td>横滚PID</td><td>-99.69～-58.42μs</td><td>持续负向修正</td></tr><tr><td>俯仰PID</td><td>-130.59～-8.98μs</td><td>输出随误差变化</td></tr><tr><td>横滚PWM</td><td>1400～1442μs</td><td>横滚方向符号+1已应用</td></tr><tr><td>俯仰PWM</td><td>1509～1631μs</td><td>俯仰方向符号-1已应用</td></tr></table>
+<p>“角度误差→目标角速度→角速度PID→PWM”软件链路已打通。手持测试没有气流反馈，舵面无法把板子拉回目标姿态，所以不能仅由角度继续增大判定舵机方向错误。</p>
+<h2>5. 80m高度控制</h2>
+<p>配置快照为：目标高度80m，二级总质量0.4074kg，箭体直径0.0616m，舵机5.5556μs/°，舵角限幅±10°。但<code>altitude_control_allowed</code>、<code>altitude_prediction_valid</code>、预测最高点、建议舵角和实际混入舵角全程均为0。</p>
+<p>高度控制要求：时间超过7.5s、上升速度大于2m/s、横滚和俯仰误差均不超过15°。7.652s时高度约40.19m、速度约26.62m/s，但横滚37.50°，因此高度控制被禁止。</p>
+<p><b>判定：</b><span class="bad">80m预测和高度舵面混控未被本次测试覆盖</span>。舵机所有变化均来自姿态PID。</p>
+<h2>6. BMP280精度与状态</h2>
+<table><tr><th>项目</th><th>结果</th></tr><tr><td>初始化/地址</td><td>成功，0x77，全程有效</td></tr><tr><td>采样周期</td><td>40ms，时间戳无缺口</td></tr><tr><td>静止压力标准差/峰峰值</td><td>1.85Pa / 8.39Pa</td></tr><tr><td>静止高度标准差/峰峰值</td><td>0.155m / 0.70m</td></tr><tr><td>整段高度</td><td>-1.09～59.74m</td></tr><tr><td>温度</td><td>28.86～29.67℃</td></tr></table>
+<p>BMP280可清晰分辨几十米高度变化。但高度在点火前已开始上升，气压差分速度有116.09m/s尖峰，说明该曲线是人工压力/移动刺激，不能作为真实飞行空气动力标定。</p>
+<div class="page"></div><h2>7. 垂直速度融合</h2>
+<p>681个日志点中，融合垂直速度与IMU垂直速度每点完全相等，最大差值0.00m/s。旧图中紫色融合线被后绘制的橙色IMU线完全覆盖；中文新图已将融合速度改为最上层紫色虚线。</p>
+<table><tr><th>数据</th><th>范围</th><th>评价</th></tr><tr><td>气压计垂直速度</td><td>-15.69～116.09m/s</td><td>差分对压力快变敏感，尖峰明显</td></tr><tr><td>IMU垂直速度</td><td>-0.59～41.63m/s</td><td>有偏置与积分漂移风险</td></tr><tr><td>融合垂直速度</td><td>-0.59～41.63m/s</td><td>日志点与IMU完全相同</td></tr></table>
+<p>当前只在新气压速度到来的瞬间融合，其余循环又把融合值设为IMU速度。<b>这是真实的算法/更新时序问题，不只是图表问题。</b>由80m最高点预测依赖垂直速度，实飞前应优先修正。</p>
+<h2>8. IMU与W25Q64</h2>
+<ul><li>IMU 681/681条有效，总线错误0，连续错误0，FIFO复位0，初始化次数1。</li><li>W25Q64序号0～680连续，时间戳步长全部20ms，即50Hz，开伞后继续记录约4.14s。</li><li>v6的实际PWM、角速度、目标角速度、PID输出、样本时间和配置快照均解析正常。</li></ul>
+<p><b>判定：</b><span class="ok">IMU采集及W25Q64写入、读取和解析链路通过</span>。</p>
+<h2>9. 分项验收</h2>
+<table><tr><th>功能</th><th>结果</th><th>备注</th></tr><tr><td>PB11点火与800ms脉宽</td><td class="ok">通过</td><td>6700ms开始</td></tr><tr><td>倒装180°</td><td class="ok">通过</td><td>倒装时姿态接近0°</td></tr><tr><td>姿态PID/舵机PWM</td><td class="ok">通过</td><td>实际PWM有连续输出</td></tr><tr><td>65°保护开伞</td><td class="ok">通过</td><td>超限100ms触发</td></tr><tr><td>13s强制开伞</td><td class="warn">未单独验证</td><td>被提前开伞覆盖</td></tr><tr><td>BMP280/IMU/W25Q64</td><td class="ok">通过</td><td>无丢帧或总线错误</td></tr><tr><td>80m预测/高度混控</td><td class="bad">未运行</td><td>姿态超过15°</td></tr><tr><td>垂直速度融合</td><td class="bad">需修正</td><td>融合值与IMU值完全相同</td></tr></table>
+<h2>10. 下一步优先级</h2>
+<ol><li><b>修正垂直速度融合：</b>保持融合状态，用气压速度低频约束IMU积分，不在非气压更新循环覆盖融合结果。</li><li><b>单独验证13s开伞：</b>全程保持横滚/俯仰低于65°，使用无危险假负载。</li><li><b>验证高度控制：</b>板子正面朝下，7.5s后姿态保持在±15°内，同时制造大于2m/s的上升速度。</li><li><b>检查三个量：</b>预测最高点、建议舵角、实际混入舵角应在控制许可后变为合理非零值。</li><li><b>舵面方向检查：</b>分别施加小的正横滚/正俯仰扰动，根据箭体安装判断舵面是否产生恢复力矩。</li></ol>
+<div class="summary">最终结论：“时序和安全状态机”基本通过；“精准80m控高”未进入实际执行，且垂直速度融合需修正。修正后应再用无危险假负载完成一次保持姿态的全流程测试。</div>
+<div class="foot">本报告依据 flight_log_20260815_193030/flight_log.csv 中681条实测记录生成。</div>
+</body></html>
