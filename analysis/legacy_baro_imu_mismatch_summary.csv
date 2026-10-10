@@ -1,0 +1,11 @@
+﻿log,repository_path,liftoff_s,stage2_ignition_first_s,deploy_s,usable_baro_samples,samples_over_20_mps,percent_over_20_mps,over_limit_runs,max_mismatch_mps,first_over_limit_s,last_over_limit_s,stage1_over_limit_samples,stage2_over_limit_samples,coast_over_limit_samples,prediction_nonzero_over_limit_samples,prediction_nonzero_max_mismatch_mps
+flight_log_20260816_com8,archive/legacy_202608/flight_log_20260816_com8/flight_log.csv,5.892,6.412,10.026,33,14,42.424,4,171.440,6.452,7.172,0,14,0,0,
+flight_log_20260816_com8_11s,archive/legacy_202608/flight_log_20260816_com8_11s/flight_log.csv,5.991,6.411,10.431,111,16,14.414,3,228.820,6.451,7.531,0,9,7,5,81.320
+flight_log_20260817_com8_height_priority,archive/legacy_202608/flight_log_20260817_com8_height_priority/flight_log.csv,5.631,6.411,9.971,109,19,17.431,4,195.740,6.451,9.491,0,9,10,7,63.610
+flight_log_20260818_com9_55g_50_50,archive/legacy_202608/flight_log_20260818_com9_55g_50_50/flight_log.csv,5.591,6.411,10.011,110,17,15.455,3,250.380,6.451,7.851,0,9,8,6,57.950
+flight_log_20260819_com8,archive/legacy_202608/flight_log_20260819_com8/flight_log.csv,5.691,6.411,10.431,119,20,16.807,5,147.050,6.531,8.651,0,8,12,8,94.610
+flight_log_20260822_com10_partial,archive/legacy_202608/flight_log_20260822_com10_partial/flight_log.csv,5.751,6.411,10.311,114,21,18.421,4,161.590,6.451,7.931,0,10,11,8,79.010
+flight_log_20260822_com10_run2_partial,archive/legacy_202608/flight_log_20260822_com10_run2_partial/flight_log.csv,5.551,6.411,9.531,99,17,17.172,2,298.060,6.451,7.531,0,10,7,5,80.450
+flight_log_20260822_com10_run3_partial,archive/legacy_202608/flight_log_20260822_com10_run3_partial/flight_log.csv,5.971,6.411,10.611,116,12,10.345,5,97.640,6.451,8.051,0,6,6,4,37.340
+flight_log_20260823_com10_run1_partial,archive/legacy_202608/flight_log_20260823_com10_run1_partial/flight_log.csv,5.591,6.411,11.011,135,17,12.593,4,91.870,5.611,8.091,1,7,9,6,60.440
+flight_log_20260823_com10_run2_partial,archive/legacy_202608/flight_log_20260823_com10_run2_partial/flight_log.csv,5.471,6.411,9.271,95,19,20.000,2,119.680,6.451,7.491,0,11,8,5,56.040

@@ -29,6 +29,7 @@ git commit -m "Import flight logs YYYY-MM-DD"
 ```powershell
 & "C:\Users\91321\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" .\tools\import_legacy_202608.py
 & "C:\Users\91321\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" .\tools\analyze_prediction_dropouts.py
+& "C:\Users\91321\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" .\tools\analyze_legacy_baro_imu_mismatch.py
 ```
 
 ## 常用命令
