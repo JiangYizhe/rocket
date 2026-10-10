@@ -1,0 +1,16 @@
+.\objects\rocket.o: Hardware\Rocket.c
+.\objects\rocket.o: D:\Keil5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\rocket.o: Hardware\RocketConfig.h
+.\objects\rocket.o: Hardware\FullFlowTestConfig.h
+.\objects\rocket.o: Hardware\Ignition.h
+.\objects\rocket.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\rocket.o: Hardware\Servo.h
+.\objects\rocket.o: Hardware\IMU.h
+.\objects\rocket.o: Hardware\BMP280.h
+.\objects\rocket.o: Hardware\FlightControl.h
+.\objects\rocket.o: Hardware\FlightLog.h
+.\objects\rocket.o: Hardware\AltitudeControl.h
+.\objects\rocket.o: Hardware\RocketState.h
+.\objects\rocket.o: Hardware\RemoteLaunch.h
+.\objects\rocket.o: Hardware\Buzzer.h
+.\objects\rocket.o: Hardware\Rocket.h

@@ -1,0 +1,51 @@
+#include "stm32f10x.h"
+#include "RocketConfig.h"
+#include "FullFlowTestConfig.h"
+#include "Ignition.h"
+
+/*============================== 公开函数 ==============================*/
+
+void Ignition_Init(void)
+{
+	GPIO_InitTypeDef gpio_init;
+
+	RCC_APB2PeriphClockCmd(ROCKET_IGNITION_GPIO_CLOCK |
+						   ROCKET_SEPARATION_IGNITION_GPIO_CLOCK,
+						   ENABLE);
+
+	/* 先预装低电平，再切换为输出，降低上电初始化毛刺风险。 */
+	GPIO_ResetBits(ROCKET_IGNITION_GPIO, ROCKET_IGNITION_GPIO_PIN);
+	GPIO_ResetBits(ROCKET_SEPARATION_IGNITION_GPIO,
+					 ROCKET_SEPARATION_IGNITION_GPIO_PIN);
+	gpio_init.GPIO_Pin = ROCKET_IGNITION_GPIO_PIN |
+						 ROCKET_SEPARATION_IGNITION_GPIO_PIN;
+	gpio_init.GPIO_Mode = GPIO_Mode_Out_PP;
+	gpio_init.GPIO_Speed = GPIO_Speed_2MHz;
+	GPIO_Init(ROCKET_IGNITION_GPIO, &gpio_init);
+	GPIO_ResetBits(ROCKET_IGNITION_GPIO, ROCKET_IGNITION_GPIO_PIN);
+	GPIO_ResetBits(ROCKET_SEPARATION_IGNITION_GPIO,
+					 ROCKET_SEPARATION_IGNITION_GPIO_PIN);
+}
+
+void Ignition_Set(uint8_t active)
+{
+#if ROCKET_IGNITION_ENABLE
+	if(active != 0U)
+	{
+		GPIO_SetBits(ROCKET_IGNITION_GPIO, ROCKET_IGNITION_GPIO_PIN);
+		GPIO_SetBits(ROCKET_SEPARATION_IGNITION_GPIO,
+					 ROCKET_SEPARATION_IGNITION_GPIO_PIN);
+	}
+	else
+	{
+		GPIO_ResetBits(ROCKET_IGNITION_GPIO, ROCKET_IGNITION_GPIO_PIN);
+		GPIO_ResetBits(ROCKET_SEPARATION_IGNITION_GPIO,
+						 ROCKET_SEPARATION_IGNITION_GPIO_PIN);
+	}
+#else
+	(void)active;
+	GPIO_ResetBits(ROCKET_IGNITION_GPIO, ROCKET_IGNITION_GPIO_PIN);
+	GPIO_ResetBits(ROCKET_SEPARATION_IGNITION_GPIO,
+					 ROCKET_SEPARATION_IGNITION_GPIO_PIN);
+#endif
+}

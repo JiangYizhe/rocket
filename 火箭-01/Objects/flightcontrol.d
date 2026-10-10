@@ -1,0 +1,9 @@
+.\objects\flightcontrol.o: Hardware\FlightControl.c
+.\objects\flightcontrol.o: Hardware\RocketConfig.h
+.\objects\flightcontrol.o: Hardware\FullFlowTestConfig.h
+.\objects\flightcontrol.o: .\System\PID.h
+.\objects\flightcontrol.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\flightcontrol.o: .\System\ControlMath.h
+.\objects\flightcontrol.o: Hardware\Servo.h
+.\objects\flightcontrol.o: Hardware\FlightControl.h
+.\objects\flightcontrol.o: Hardware\IMU.h

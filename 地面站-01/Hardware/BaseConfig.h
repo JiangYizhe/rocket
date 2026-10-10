@@ -1,0 +1,24 @@
+#ifndef __BASE_CONFIG_H
+#define __BASE_CONFIG_H
+
+#define BASE_BLUETOOTH_BAUD_RATE             115200UL
+#define BASE_LINK_PING_PERIOD_MS             100U
+#define BASE_LINK_RESPONSE_TIMEOUT_MS        300U
+#define BASE_LINK_TIMEOUT_MS                 1000U
+#define BASE_LINK_QUALIFY_COUNT              10U
+#define BASE_LINK_MAX_CONSECUTIVE_MISSES     3U
+#define BASE_LAUNCH_READY_FRESH_MS           BASE_LINK_TIMEOUT_MS
+#define BASE_LINK_TX_TIMEOUT_LOOPS           100000UL
+
+#define BASE_STAGE2_DELAY_MS                 1200U
+#define BASE_STAGE1_IGNITION_PULSE_MS        800U
+#define BASE_LAUNCH_RETRY_PERIOD_MS          50U
+#define BASE_LAUNCH_RETRY_COUNT              10U
+#define BASE_LAUNCH_MAX_COMMAND_AGE_MS       600U
+
+#define BASE_LED_FLASH_PERIOD_MS             250U
+#define BASE_ERROR_FLASH_PERIOD_MS           100U
+#define BASE_BUTTON_DEBOUNCE_MS              30U
+#define BASE_BUTTON_RELEASE_ARM_MS           100U
+
+#endif
