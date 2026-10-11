@@ -1,0 +1,19 @@
+{
+  "controller": "evening2",
+  "flight_label": "2026-10-11 今日傍晚第二枚",
+  "log_status": "empty",
+  "serial_port": "COM8",
+  "baudrate": 115200,
+  "read_attempts": 2,
+  "header_version": 9,
+  "record_size_bytes": 144,
+  "first_record_address": "0x000100",
+  "first_record_all_ff": true,
+  "decoded_records": 0,
+  "peak_relative_altitude_m": null,
+  "ignition_active_first_s": null,
+  "parachute_deployed_first_s": null,
+  "physical_board_id": null,
+  "user_report": "落地时开关损坏，可能导致重新上电并擦除日志",
+  "erasure_cause_confirmed": false
+}
