@@ -56,3 +56,4 @@ legacy_directory,flight_log_h7_test_20260815,archive/legacy_202608/flight_log_h7
 legacy_directory,flight_log_pc4_ignition_test_20260815,archive/legacy_202608/flight_log_pc4_ignition_test_20260815,4,1219691,flight_log.csv,467,9.320,0.440,6700,6.712,da0c28985277f18d852f4011810c8a63972650fde3904ebf127a4e28879b836d
 captures,standalone serial captures,captures,7,3386624,,,,,,,422315a1b0666d872924aaa22bfb600cdac84f91522f02a6d64226788fa5f66f
 external,COM25_log_export_20260928_001527.zip,external/COM25_log_export_20260928_001527,3,1053797,flight_log.csv,794,15.860,35.380,1400,11.559,ac8d0585d441bc259513806e64e5a9fdbbdb977f464502d503dfbb019b9ed1e8
+directory,flight_log_20261011_board1_new_com9,archive/flight_log_20261011_board1_new_com9,5,2348759,flight_log_0-16s.csv,794,15.860,41.640,1100,1.100,7f037ee7196d08c5658728c0f5a04ee42be87a521afea16781f3398a95d1d845
