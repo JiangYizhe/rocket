@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1080" viewBox="0 0 1500 1080">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<g font-family="Microsoft YaHei, SimHei, Arial, sans-serif">
+<text x="38" y="45" font-size="25" font-weight="bold" fill="#0f172a">历次二级开伞 XYZ 轴角速度比较</text>
+<text x="38" y="76" font-size="14" fill="#475569">按 parachute_deployed 首次变为 1 对齐；X=Roll，Y=Pitch，Z=Yaw（IMU Z轴）</text>
+<text x="105" y="105" font-size="18" font-weight="bold" fill="#1e293b">二级开伞瞬间三轴角速度</text>
+<rect x="105" y="130" width="1360" height="330" fill="#ffffff" stroke="#cbd5e1"/>
+<line x1="105" y1="460.00" x2="1465" y2="460.00" stroke="#e2e8f0"/>
+<text x="93" y="465.00" text-anchor="end" font-size="12" fill="#475569">-120</text>
+<line x1="105" y1="377.50" x2="1465" y2="377.50" stroke="#e2e8f0"/>
+<text x="93" y="382.50" text-anchor="end" font-size="12" fill="#475569">-60</text>
+<line x1="105" y1="295.00" x2="1465" y2="295.00" stroke="#e2e8f0"/>
+<text x="93" y="300.00" text-anchor="end" font-size="12" fill="#475569">0</text>
+<line x1="105" y1="212.50" x2="1465" y2="212.50" stroke="#e2e8f0"/>
+<text x="93" y="217.50" text-anchor="end" font-size="12" fill="#475569">60</text>
+<line x1="105" y1="130.00" x2="1465" y2="130.00" stroke="#e2e8f0"/>
+<text x="93" y="135.00" text-anchor="end" font-size="12" fill="#475569">120</text>
+<line x1="105" y1="295.00" x2="1465" y2="295.00" stroke="#64748b" stroke-width="1.5"/>
+<rect x="147.14" y="295.00" width="34.00" height="114.12" fill="#dc2626"/>
+<text x="164.14" y="425.12" text-anchor="middle" font-size="11" fill="#334155">-83.0</text>
+<rect x="185.14" y="295.00" width="34.00" height="38.09" fill="#16a34a"/>
+<text x="202.14" y="349.09" text-anchor="middle" font-size="11" fill="#334155">-27.7</text>
+<rect x="223.14" y="272.04" width="34.00" height="22.96" fill="#2563eb"/>
+<text x="240.14" y="265.04" text-anchor="middle" font-size="11" fill="#334155">16.7</text>
+<text x="202.14" y="488" text-anchor="middle" font-size="12" fill="#334155">09-20</text>
+<rect x="341.43" y="295.00" width="34.00" height="32.04" fill="#dc2626"/>
+<text x="358.43" y="343.04" text-anchor="middle" font-size="11" fill="#334155">-23.3</text>
+<rect x="379.43" y="272.04" width="34.00" height="22.96" fill="#16a34a"/>
+<text x="396.43" y="265.04" text-anchor="middle" font-size="11" fill="#334155">16.7</text>
+<rect x="417.43" y="295.00" width="34.00" height="67.65" fill="#2563eb"/>
+<text x="434.43" y="378.65" text-anchor="middle" font-size="11" fill="#334155">-49.2</text>
+<text x="396.43" y="488" text-anchor="middle" font-size="12" fill="#334155">09-23</text>
+<rect x="535.71" y="220.75" width="34.00" height="74.25" fill="#dc2626"/>
+<text x="552.71" y="213.75" text-anchor="middle" font-size="11" fill="#334155">54.0</text>
+<rect x="573.71" y="295.00" width="34.00" height="47.30" fill="#16a34a"/>
+<text x="590.71" y="358.30" text-anchor="middle" font-size="11" fill="#334155">-34.4</text>
+<rect x="611.71" y="295.00" width="34.00" height="43.31" fill="#2563eb"/>
+<text x="628.71" y="354.31" text-anchor="middle" font-size="11" fill="#334155">-31.5</text>
+<text x="590.71" y="488" text-anchor="middle" font-size="12" fill="#334155">09-27</text>
+<rect x="730.00" y="272.31" width="34.00" height="22.69" fill="#dc2626"/>
+<text x="747.00" y="265.31" text-anchor="middle" font-size="11" fill="#334155">16.5</text>
+<rect x="768.00" y="295.00" width="34.00" height="32.59" fill="#16a34a"/>
+<text x="785.00" y="343.59" text-anchor="middle" font-size="11" fill="#334155">-23.7</text>
+<rect x="806.00" y="295.00" width="34.00" height="141.90" fill="#2563eb"/>
+<text x="823.00" y="452.90" text-anchor="middle" font-size="11" fill="#334155">-103.2</text>
+<text x="785.00" y="488" text-anchor="middle" font-size="12" fill="#334155">09-28</text>
+<rect x="924.29" y="295.00" width="34.00" height="3.71" fill="#dc2626"/>
+<text x="941.29" y="314.71" text-anchor="middle" font-size="11" fill="#334155">-2.7</text>
+<rect x="962.29" y="295.00" width="34.00" height="10.04" fill="#16a34a"/>
+<text x="979.29" y="321.04" text-anchor="middle" font-size="11" fill="#334155">-7.3</text>
+<rect x="1000.29" y="252.51" width="34.00" height="42.49" fill="#2563eb"/>
+<text x="1017.29" y="245.51" text-anchor="middle" font-size="11" fill="#334155">30.9</text>
+<text x="979.29" y="488" text-anchor="middle" font-size="12" fill="#334155">10-02 第一次</text>
+<rect x="1118.57" y="295.00" width="34.00" height="7.70" fill="#dc2626"/>
+<text x="1135.57" y="318.70" text-anchor="middle" font-size="11" fill="#334155">-5.6</text>
+<rect x="1156.57" y="295.00" width="34.00" height="13.89" fill="#16a34a"/>
+<text x="1173.57" y="324.89" text-anchor="middle" font-size="11" fill="#334155">-10.1</text>
+<rect x="1194.57" y="222.95" width="34.00" height="72.05" fill="#2563eb"/>
+<text x="1211.57" y="215.95" text-anchor="middle" font-size="11" fill="#334155">52.4</text>
+<text x="1173.57" y="488" text-anchor="middle" font-size="12" fill="#334155">10-02 第二次</text>
+<rect x="1312.86" y="279.46" width="34.00" height="15.54" fill="#dc2626"/>
+<text x="1329.86" y="272.46" text-anchor="middle" font-size="11" fill="#334155">11.3</text>
+<rect x="1350.86" y="293.07" width="34.00" height="1.93" fill="#16a34a"/>
+<text x="1367.86" y="286.07" text-anchor="middle" font-size="11" fill="#334155">1.4</text>
+<rect x="1388.86" y="263.93" width="34.00" height="31.07" fill="#2563eb"/>
+<text x="1405.86" y="256.93" text-anchor="middle" font-size="11" fill="#334155">22.6</text>
+<text x="1367.86" y="488" text-anchor="middle" font-size="12" fill="#334155">10-03 本次</text>
+<text x="34" y="295.0" transform="rotate(-90 34 295.0)" text-anchor="middle" font-size="13" fill="#475569">角速度 (°/s)</text>
+<text x="105" y="585" font-size="18" font-weight="bold" fill="#1e293b">二级开伞后1秒内峰值（保留方向）</text>
+<rect x="105" y="610" width="1360" height="330" fill="#ffffff" stroke="#cbd5e1"/>
+<line x1="105" y1="940.00" x2="1465" y2="940.00" stroke="#e2e8f0"/>
+<text x="93" y="945.00" text-anchor="end" font-size="12" fill="#475569">-2600</text>
+<line x1="105" y1="857.50" x2="1465" y2="857.50" stroke="#e2e8f0"/>
+<text x="93" y="862.50" text-anchor="end" font-size="12" fill="#475569">-1300</text>
+<line x1="105" y1="775.00" x2="1465" y2="775.00" stroke="#e2e8f0"/>
+<text x="93" y="780.00" text-anchor="end" font-size="12" fill="#475569">0</text>
+<line x1="105" y1="692.50" x2="1465" y2="692.50" stroke="#e2e8f0"/>
+<text x="93" y="697.50" text-anchor="end" font-size="12" fill="#475569">1300</text>
+<line x1="105" y1="610.00" x2="1465" y2="610.00" stroke="#e2e8f0"/>
+<text x="93" y="615.00" text-anchor="end" font-size="12" fill="#475569">2600</text>
+<line x1="105" y1="775.00" x2="1465" y2="775.00" stroke="#64748b" stroke-width="1.5"/>
+<rect x="147.14" y="775.00" width="34.00" height="6.36" fill="#dc2626"/>
+<text x="164.14" y="797.36" text-anchor="middle" font-size="11" fill="#334155">-100.2</text>
+<rect x="185.14" y="775.00" width="34.00" height="8.60" fill="#16a34a"/>
+<text x="202.14" y="799.60" text-anchor="middle" font-size="11" fill="#334155">-135.5</text>
+<rect x="223.14" y="775.00" width="34.00" height="9.74" fill="#2563eb"/>
+<text x="240.14" y="800.74" text-anchor="middle" font-size="11" fill="#334155">-153.4</text>
+<text x="202.14" y="968" text-anchor="middle" font-size="12" fill="#334155">09-20</text>
+<rect x="341.43" y="775.00" width="34.00" height="31.77" fill="#dc2626"/>
+<text x="358.43" y="822.77" text-anchor="middle" font-size="11" fill="#334155">-500.6</text>
+<rect x="379.43" y="736.23" width="34.00" height="38.77" fill="#16a34a"/>
+<text x="396.43" y="729.23" text-anchor="middle" font-size="11" fill="#334155">611.0</text>
+<rect x="417.43" y="682.14" width="34.00" height="92.86" fill="#2563eb"/>
+<text x="434.43" y="675.14" text-anchor="middle" font-size="11" fill="#334155">1463.2</text>
+<text x="396.43" y="968" text-anchor="middle" font-size="12" fill="#334155">09-23</text>
+<rect x="535.71" y="771.33" width="34.00" height="3.67" fill="#dc2626"/>
+<text x="552.71" y="764.33" text-anchor="middle" font-size="11" fill="#334155">57.8</text>
+<rect x="573.71" y="775.00" width="34.00" height="2.18" fill="#16a34a"/>
+<text x="590.71" y="793.18" text-anchor="middle" font-size="11" fill="#334155">-34.4</text>
+<rect x="611.71" y="770.91" width="34.00" height="4.09" fill="#2563eb"/>
+<text x="628.71" y="763.91" text-anchor="middle" font-size="11" fill="#334155">64.5</text>
+<text x="590.71" y="968" text-anchor="middle" font-size="12" fill="#334155">09-27</text>
+<rect x="730.00" y="775.00" width="34.00" height="34.95" fill="#dc2626"/>
+<text x="747.00" y="825.95" text-anchor="middle" font-size="11" fill="#334155">-550.8</text>
+<rect x="768.00" y="737.51" width="34.00" height="37.49" fill="#16a34a"/>
+<text x="785.00" y="730.51" text-anchor="middle" font-size="11" fill="#334155">590.8</text>
+<rect x="806.00" y="640.14" width="34.00" height="134.86" fill="#2563eb"/>
+<text x="823.00" y="633.14" text-anchor="middle" font-size="11" fill="#334155">2125.1</text>
+<text x="785.00" y="968" text-anchor="middle" font-size="12" fill="#334155">09-28</text>
+<rect x="924.29" y="746.11" width="34.00" height="28.89" fill="#dc2626"/>
+<text x="941.29" y="739.11" text-anchor="middle" font-size="11" fill="#334155">455.2</text>
+<rect x="962.29" y="775.00" width="34.00" height="24.19" fill="#16a34a"/>
+<text x="979.29" y="815.19" text-anchor="middle" font-size="11" fill="#334155">-381.1</text>
+<rect x="1000.29" y="775.00" width="34.00" height="12.77" fill="#2563eb"/>
+<text x="1017.29" y="803.77" text-anchor="middle" font-size="11" fill="#334155">-201.3</text>
+<text x="979.29" y="968" text-anchor="middle" font-size="12" fill="#334155">10-02 第一次</text>
+<rect x="1118.57" y="719.92" width="34.00" height="55.08" fill="#dc2626"/>
+<text x="1135.57" y="712.92" text-anchor="middle" font-size="11" fill="#334155">867.9</text>
+<rect x="1156.57" y="775.00" width="34.00" height="46.13" fill="#16a34a"/>
+<text x="1173.57" y="837.13" text-anchor="middle" font-size="11" fill="#334155">-726.9</text>
+<rect x="1194.57" y="630.12" width="34.00" height="144.88" fill="#2563eb"/>
+<text x="1211.57" y="623.12" text-anchor="middle" font-size="11" fill="#334155">2282.9</text>
+<text x="1173.57" y="968" text-anchor="middle" font-size="12" fill="#334155">10-02 第二次</text>
+<rect x="1312.86" y="772.46" width="34.00" height="2.54" fill="#dc2626"/>
+<text x="1329.86" y="765.46" text-anchor="middle" font-size="11" fill="#334155">40.0</text>
+<rect x="1350.86" y="775.00" width="34.00" height="1.13" fill="#16a34a"/>
+<text x="1367.86" y="792.13" text-anchor="middle" font-size="11" fill="#334155">-17.8</text>
+<rect x="1388.86" y="770.76" width="34.00" height="4.24" fill="#2563eb"/>
+<text x="1405.86" y="763.76" text-anchor="middle" font-size="11" fill="#334155">66.8</text>
+<text x="1367.86" y="968" text-anchor="middle" font-size="12" fill="#334155">10-03 本次</text>
+<text x="34" y="775.0" transform="rotate(-90 34 775.0)" text-anchor="middle" font-size="13" fill="#475569">角速度 (°/s)</text>
+<rect x="990" y="34" width="18" height="18" fill="#dc2626"/>
+<text x="1017" y="49" font-size="13" fill="#334155">X轴</text>
+<rect x="1120" y="34" width="18" height="18" fill="#16a34a"/>
+<text x="1147" y="49" font-size="13" fill="#334155">Y轴</text>
+<rect x="1250" y="34" width="18" height="18" fill="#2563eb"/>
+<text x="1277" y="49" font-size="13" fill="#334155">Z轴</text>
+</g>
+</svg>

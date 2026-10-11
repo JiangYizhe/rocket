@@ -1,0 +1,19 @@
+{
+  "decoded_records": 794,
+  "chart_records": 794,
+  "chart_start_s": 0.0,
+  "chart_end_s": 15.86,
+  "user_stage2_delay_ms": 1130,
+  "logged_stage2_delay_ms": 1130.0,
+  "stage2_delay_matches_user_value": true,
+  "ignition_active_first_s": 1.14,
+  "parachute_deployed_first_s": 4.8,
+  "flight_control_first_s": 1.34,
+  "altitude_control_allowed_first_s": 1.62,
+  "altitude_mix_enabled_first_s": 0.0,
+  "height_priority_enabled_first_s": null,
+  "peak_relative_altitude_m": 56.76,
+  "peak_relative_altitude_time_s": 4.86,
+  "configured_servo_limit_deg": 30.0,
+  "last_rocket_state": "deployed"
+}

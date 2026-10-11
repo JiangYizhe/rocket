@@ -1,0 +1,12 @@
+{
+  "decoded_records": 794,
+  "chart_records": 794,
+  "chart_end_s": 15.86,
+  "ignition_active_first_s": 1.18,
+  "parachute_deployed_first_s": 6.94,
+  "flight_control_first_s": 1.38,
+  "altitude_control_allowed_first_s": 1.66,
+  "peak_relative_altitude_m": 73.12,
+  "peak_relative_altitude_time_s": 4.98,
+  "configured_servo_limit_deg": 30.0
+}

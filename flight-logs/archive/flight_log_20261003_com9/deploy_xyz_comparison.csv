@@ -1,0 +1,8 @@
+﻿label,deploy_time_s,deploy_altitude_m,max_altitude_m,x_event_dps,y_event_dps,z_event_dps,event_vector_dps,x_post1_peak_dps,y_post1_peak_dps,z_post1_peak_dps,path
+09-20,2.66,19.06,22.13,-83.0,-27.7,16.7,89.07962730052253,-100.2,-135.5,-153.4,C:\Users\91321\Desktop\火箭飞控pcb\flight_log_20260920_com9_run2_full\flight_log.csv
+09-23,7.340000000000003,54.86,73.86,-23.3,16.7,-49.2,56.9422514482875,-500.6,611.0,1463.2,C:\Users\91321\Desktop\火箭飞控pcb\flight_log_20260923_com9_full\flight_log.csv
+09-27,4.44,48.51,51.03,54.0,-34.4,-31.5,71.35551835702688,57.8,-34.4,64.5,C:\Users\91321\Desktop\火箭飞控pcb\COM9_capture_20260927\partial_export\flight_log.csv
+09-28,3.5599999999999987,nan,35.38,16.5,-23.7,-103.2,107.16426643242606,-550.8,590.8,2125.1,C:\Users\91321\Desktop\火箭飞控pcb\COM25_log_export_20260928_001527\COM25_log_export_20260928_001527\flight_log.csv
+10-02 第一次,7.440000000000001,54.64,78.22,-2.7,-7.3,30.9,31.865184763311824,455.2,-381.1,-201.3,C:\Users\91321\Desktop\火箭飞控pcb\flight_log_20261002_com9_16s\flight_log.csv
+10-02 第二次,7.960000000000001,54.44,86.28,-5.6,-10.1,52.4,53.65752510133131,867.9,-726.9,2282.9,C:\Users\91321\Desktop\火箭飞控pcb\flight_log_20261002_launch2_com9\flight_log.csv
+10-03 本次,7.420000000000002,54.83,78.15,11.3,1.4,22.6,25.306323320466767,40.0,-17.8,66.8,C:\Users\91321\Desktop\火箭飞控pcb\flight_log_20261003_com9\flight_log.csv

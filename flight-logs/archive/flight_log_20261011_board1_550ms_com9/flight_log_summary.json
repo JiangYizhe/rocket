@@ -1,0 +1,20 @@
+{
+  "controller": "board1",
+  "expected_attitude_control_start_ms": 550,
+  "decoded_records": 794,
+  "chart_records": 794,
+  "chart_start_s": 0.0,
+  "chart_end_s": 15.86,
+  "logged_stage2_delay_ms": 1100.0,
+  "ignition_active_first_s": 1.1,
+  "parachute_deployed_first_s": 6.4,
+  "flight_control_first_s": 1.32,
+  "attitude_control_start_error_ms": 770,
+  "attitude_control_start_matches_expected": false,
+  "altitude_control_allowed_first_s": 2.44,
+  "altitude_mix_enabled_first_s": 0.0,
+  "peak_relative_altitude_m": 198.75,
+  "peak_relative_altitude_time_s": 1.6,
+  "configured_servo_limit_deg": 30.0,
+  "last_rocket_state": "deployed"
+}
